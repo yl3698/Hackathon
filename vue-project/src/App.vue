@@ -1,85 +1,44 @@
-<script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
-
-  <RouterView />
+  <b-container class="mt-4">
+    <b-row>
+      <b-col cols="12" md="8" offset-md="2">
+        <b-input-group class="mb-3">
+          <b-form-input
+            v-model="searchTerm"
+            placeholder="Search..."
+          ></b-form-input>
+        </b-input-group>
+        <div>
+          3334 results
+        </div>
+        <div v-for="result in filteredResults" :key="result.id" class="mb-3">
+          <b-card
+            :title="result.title"
+            class="h-100">
+            <p>{{ result.summary }}</p>
+          </b-card>
+        </div>
+      </b-col>
+    </b-row>
+  </b-container>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
+<script setup>
+import { ref, computed } from 'vue';
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
+const searchTerm = ref('');
 
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
+const searchResults = ref([
+  // Your fake data or dynamic data
+  { id: 1, title: 'Vue 3 and BootstrapVue', summary: 'Integrating Vue 3 with BootstrapVue for modern web applications.' },
+  { id: 2, title: 'Component Design Patterns', summary: 'Exploring component design patterns in Vue 3 for scalable applications.' },
+  // More results...
+]);
 
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
-}
-</style>
+const filteredResults = computed(() => {
+  return searchResults.value.filter(result => 
+    result.title.toLowerCase().includes(searchTerm.value.toLowerCase()) || 
+    result.summary.toLowerCase().includes(searchTerm.value.toLowerCase())
+  );
+});
+</script>
