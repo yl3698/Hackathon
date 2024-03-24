@@ -5,37 +5,34 @@ defineProps<{
 </script>
 
 <template>
-  <div class="greetings">
-    <h1 class="green">{{ msg }}</h1>
-    <h3>
-      You’ve successfully created a project with
-      <a href="https://vitejs.dev/" target="_blank" rel="noopener">Vite</a> +
-      <a href="https://vuejs.org/" target="_blank" rel="noopener">Vue 3</a>. What's next?
-    </h3>
+  <img src="../assets/header.png" alt="Header Image" class="full-width-image">
+  <div class="header-text">
+    <h1>Welcome to Wex, Lll’s community-built</h1>
+    <p style="font-size: large;">Freely available legal dictionary and legal encyclopedia</p>
   </div>
+  <div>
+    
+  </div>
+
+
 </template>
 
 <style scoped>
+.full-width-image {
+  width: 100%;
+  height: 150px;
+}
+
+.header-text {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  color: black;
+}
+
 h1 {
-  font-weight: 500;
-  font-size: 2.6rem;
-  position: relative;
-  top: -10px;
-}
-
-h3 {
-  font-size: 1.2rem;
-}
-
-.greetings h1,
-.greetings h3 {
-  text-align: center;
-}
-
-@media (min-width: 1024px) {
-  .greetings h1,
-  .greetings h3 {
-    text-align: left;
-  }
+  font-weight: 700 !important;
 }
 </style>
