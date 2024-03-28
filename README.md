@@ -37,7 +37,7 @@ _**Benefits and Impact**_
 To commence work with the project, follow these steps:
 
 1. Clone the repository: git clone [https://github.com/your-repo/lii-hackathon-2024.git](https://github.com/yl3698/Hackathon.git)
-2. Install the required dependencies: langchain, faiss, openai
+2. Install the required dependencies: pip install langchain faiss-cpu [or -gpu] openai
 3. Create abd apply the OPENAI API key to the code
 4. Execute the appropriate scripts for legal definitions and court case integration.
 5. For comprehensive instructions and documentation, please refer to the respective files and directories within the repository.
