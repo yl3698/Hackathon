@@ -4,6 +4,9 @@
 
 This repository contains the code and solutions developed during the LII Hackathon 2024, aiming to improve the Legal Information Institute's (LII) Wex legal dictionary and encyclopedia. The primary goals of this project are to address the issues related to taxonomy, tagging, search system, and context-providing within Wex. while leveraging cutting-edge AI technology and web automation. In order to address these problems, we integrated AI technology and web automation.
 
+Backend - Vishnu
+Frontend - Yuqi, Sonia
+
 # Problems Addressed
 1. **Tagging System**: The existing tagging system for legal definitions suffered from tags being either too specific, too broad, or containing duplicates, leading to an unruly mixture of unlike objects.
 2. **Search and Filtering:** The search and filtering capabilities for legal definitions and court cases were limited, making it challenging for users to find relevant information efficiently.
